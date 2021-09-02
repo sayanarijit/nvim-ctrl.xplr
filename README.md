@@ -1,5 +1,4 @@
-nvim-ctrl.xplr
-==============
+[![nvim-ctrl-xplr.gif](https://s9.gifyu.com/images/nvim-ctrl-xplr.gif)](https://gifyu.com/image/GPIl)
 
 Send files to running Neovim sessions using
 [nvim-ctrl](https://github.com/chmln/nvim-ctrl).
