@@ -38,7 +38,10 @@ Installation
   
   require("nvim-ctrl").setup{
     mode = "default",
-    key = "e",
+    keys = {
+      ["ctrl-e"] = "tabedit",
+      ["e"] = "e",
+    },
   }
 
   -- Type `e` and enjoy.
