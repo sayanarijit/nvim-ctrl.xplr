@@ -1,13 +1,14 @@
-xplr plugin template
-====================
+nvim-ctrl.xplr
+==============
 
-Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
-
+Send files to running Neovim sessions using
+[nvim-ctrl](https://github.com/chmln/nvim-ctrl).
 
 Requirements
 ------------
 
-- Some tool
+- [Neovim](https://github.com/neovim/neovim)
+- [nvim-ctrl](https://github.com/chmln/nvim-ctrl)
 
 
 Installation
@@ -26,26 +27,20 @@ Installation
   ```bash
   mkdir -p ~/.config/xplr/plugins
 
-  git clone https://github.com/me/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
+  git clone https://github.com/sayanarijit/nvim-ctrl.xplr ~/.config/xplr/plugins/nvim-ctrl
   ```
 
 - Require the module in `~/.config/xplr/init.lua`
 
   ```lua
-  require("{plugin}").setup()
+  require("nvim-ctrl").setup()
   
   -- Or
   
-  require("{plugin}").setup{
-    mode = "action",
-    key = ":",
+  require("nvim-ctrl").setup{
+    mode = "default",
+    key = "e",
   }
 
-  -- Type `::` and enjoy.
+  -- Type `e` and enjoy.
   ```
-
-
-Features
---------
-
-- Some cool feature
