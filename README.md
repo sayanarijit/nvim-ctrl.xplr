@@ -3,22 +3,24 @@
 Send files to running Neovim sessions using
 [nvim-ctrl](https://github.com/chmln/nvim-ctrl).
 
-Requirements
-------------
+## Requirements
 
 - [Neovim](https://github.com/neovim/neovim)
 - [nvim-ctrl](https://github.com/chmln/nvim-ctrl)
 
-
-Installation
-------------
+## Installation
 
 ### Install manually
 
 - Add the following line in `~/.config/xplr/init.lua`
 
   ```lua
-  package.path = os.getenv("HOME") .. '/.config/xplr/plugins/?/src/init.lua'
+  local home = os.getenv("HOME")
+  package.path = home
+  .. "/.config/xplr/plugins/?/init.lua;"
+  .. home
+  .. "/.config/xplr/plugins/?.lua;"
+  .. package.path
   ```
 
 - Clone the plugin
@@ -33,9 +35,9 @@ Installation
 
   ```lua
   require("nvim-ctrl").setup()
-  
+
   -- Or
-  
+
   require("nvim-ctrl").setup{
     mode = "default",
     keys = {
