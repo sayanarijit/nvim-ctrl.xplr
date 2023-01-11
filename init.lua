@@ -19,9 +19,7 @@ local function setup(args)
       help = "nvim :" .. command,
       messages = {
         "PopMode",
-        {
-          CallLua = "custom.nvim_ctrl." .. command,
-        },
+        { CallLuaSilently = "custom.nvim_ctrl." .. command },
       },
     }
 
@@ -36,7 +34,11 @@ local function setup(args)
         { command .. " " .. q(n.absolute_path) }
       )
 
-      if res.returncode ~= 0 then
+      if res.returncode == 0 then
+        return {
+          { LogSuccess = "nvim :" .. command .. " " .. q(n.absolute_path) },
+        }
+      else
         return {
           { LogError = res.stderr },
         }
