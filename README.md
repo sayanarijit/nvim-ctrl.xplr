@@ -39,6 +39,7 @@ Send files to running Neovim sessions using
   -- Or
 
   require("nvim-ctrl").setup{
+    bin = "nvim-ctrl",
     mode = "default",
     keys = {
       ["ctrl-e"] = "tabedit",
